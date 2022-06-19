@@ -53,6 +53,8 @@ int main() {
 
   cout << "Template id: " << msg.id() << endl;
   cout << "Template name: " << msg.name() << endl;
+  cout << "ns: " << msg.ns() << endl;
+  cout << "template_ns: " << msg.template_ns() << endl;
   cout << endl;
 
   ascii_string_cref field = static_cast<ascii_string_cref>((msg)[0]);

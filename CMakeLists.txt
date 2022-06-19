@@ -8,6 +8,7 @@ project (mFAST CXX)
 # options to build tests, examples and packages
 option(BUILD_TESTS "Build tests" ON)
 option(BUILD_EXAMPLES "Build examples" ON)
+option(BUILD_PYTHON "Build python" ON)
 option(BUILD_PACKAGES "Build packages" ON)
 
 # debug build by default
@@ -92,6 +93,9 @@ endif (BUILD_SHARED_LIBS)
 if(BUILD_EXAMPLES)
   add_subdirectory (examples)
 endif(BUILD_EXAMPLES)
+if(BUILD_PYTHON)
+  add_subdirectory (python)
+endif(BUILD_PYTHON)
 
 # Setting up dist target
 set(ARCHIVE_NAME ${CMAKE_PROJECT_NAME}-${MFAST_VERSION})
@@ -120,5 +124,6 @@ message(STATUS "CMAKE_BUILD_TYPE: " ${CMAKE_BUILD_TYPE})
 message(STATUS "BUILD_SHARED_LIBS: " ${BUILD_SHARED_LIBS})
 message(STATUS "BUILD_TESTS: " ${BUILD_TESTS})
 message(STATUS "BUILD_EXAMPLES: " ${BUILD_EXAMPLES})
+message(STATUS "BUILD_PYTHON: " ${BUILD_PYTHON})
 message(STATUS "BUILD_PACKAGES: " ${BUILD_PACKAGES})
 message(STATUS "")
